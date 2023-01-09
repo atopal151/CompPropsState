@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet, View,Image } from 'react-native';
+import Card from './src/components/Card';
+import React from 'react';
+import StateMenegmant from './src/components/StateMenegmant';
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Image style={styles.images} source={require('./assets/bilgisayar.jpg')}/>
+      <StateMenegmant />
+      <Card text={'Merhaba'} backgroundColor={'orange'} />
+      <Card text='Merhaba React !' backgroundColor='pink' />
+      <Card text='Hello React !' backgroundColor='orange' />
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
+  images:{
+    height:100,
+    width:100
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffeb3b',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'column'
   },
 });
+
+
